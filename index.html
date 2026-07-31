@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BarberApp — Descargar</title>
+<style>
+  :root {
+    --dorado: #F2CA50;
+    --fondo: #0f0f0f;
+    --superficie: #1a1a1a;
+    --superficie-alta: #232323;
+    --texto: #f2f2f2;
+    --texto-tenue: #a8a8a8;
+    --borde: #2e2e2e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 32px 16px 64px;
+  }
+  main {
+    width: 100%;
+    max-width: 460px;
+    text-align: center;
+  }
+  .icono {
+    font-size: 48px;
+    margin-bottom: 8px;
+  }
+  h1 {
+    color: var(--dorado);
+    font-size: 26px;
+    margin: 0 0 4px;
+    letter-spacing: 0.5px;
+  }
+  .subtitulo {
+    color: var(--texto-tenue);
+    font-size: 15px;
+    margin: 0 0 32px;
+  }
+  .boton-descarga {
+    display: block;
+    background: var(--dorado);
+    color: #1a1400;
+    font-weight: 700;
+    font-size: 17px;
+    text-decoration: none;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+  }
+  .version {
+    color: var(--texto-tenue);
+    font-size: 13px;
+    margin: 0 0 32px;
+  }
+  .aviso {
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  .aviso h2 {
+    font-size: 14px;
+    color: var(--dorado);
+    margin: 0 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .aviso ol {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--texto-tenue);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .aviso strong { color: var(--texto); }
+  .nota {
+    color: var(--texto-tenue);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .nota b { color: var(--texto); }
+</style>
+</head>
+<body>
+<main>
+  <div class="icono">✂️</div>
+  <h1>BarberApp</h1>
+  <p class="subtitulo">Reservá tu cita en la barbería desde tu celular</p>
+
+  <a class="boton-descarga" href="https://jzrfejjtljdfegvcthpm.supabase.co/storage/v1/object/public/releases/barberapp.apk" download>⬇ Descargar APK</a>
+  <p class="version">Versión 1.0.0 · Solo Android</p>
+
+  <div class="aviso">
+    <h2>Cómo instalar</h2>
+    <ol>
+      <li>Tocá <strong>Descargar APK</strong> arriba.</li>
+      <li>Android va a avisar "origen desconocido" — tocá <strong>Configuración</strong> y activá <strong>Permitir de esta fuente</strong> (una sola vez).</li>
+      <li>Volvé atrás y tocá <strong>Instalar</strong>.</li>
+    </ol>
+  </div>
+
+  <p class="nota">
+    Este aviso de seguridad es normal: la app todavía no está en Google Play,
+    se instala directo desde acá. <b>Solo funciona en Android</b> por ahora.
+  </p>
+</main>
+</body>
+</html>
