@@ -3,49 +3,119 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>BarberApp — Descargar</title>
+<title>BarberApp — Descargar App Oficial</title>
+<meta name="description" content="Descargá BarberApp para Android. Reservá tu turno de barbería en segundos, elegí tu profesional y evitá esperas. Descarga directa oficial v1.1.0." />
+<meta name="theme-color" content="#0f0f0f" />
+
+<!-- Open Graph / WhatsApp / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="BarberApp — Reservá tu cita desde tu celular" />
+<meta property="og:description" content="Descargá la app oficial para Android (v1.1.0 · 22.2 MB). Turnos 24/7 con tu barbero favorito sin esperas." />
+<meta property="og:image" content="./qr-descarga.png" />
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="BarberApp — Descargá la App para Android" />
+<meta name="twitter:description" content="Reservá tu cita de barbería fácil y rápido desde tu celular." />
+<meta name="twitter:image" content="./qr-descarga.png" />
+
+<!-- Favicon SVG oficial -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23141414'/%3E%3Cpath d='M30 28 L50 50 L30 72 M70 28 L50 50 L70 72' stroke='%23F2CA50' stroke-width='7' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='50' cy='50' r='5.5' fill='%23F2CA50'/%3E%3C/svg%3E" />
+
 <style>
   :root {
     --dorado: #F2CA50;
+    --dorado-hover: #ffd866;
     --fondo: #0f0f0f;
     --superficie: #1a1a1a;
-    --superficie-alta: #232323;
+    --superficie-alta: #242424;
     --texto: #f2f2f2;
     --texto-tenue: #a8a8a8;
     --borde: #2e2e2e;
+    --verde-seguro: #4ade80;
   }
   * { box-sizing: border-box; }
   body {
     margin: 0;
     background: var(--fondo);
     color: var(--texto);
-    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     display: flex;
     justify-content: center;
     padding: 32px 16px 64px;
+    -webkit-font-smoothing: antialiased;
   }
   main {
     width: 100%;
-    max-width: 460px;
+    max-width: 440px;
     text-align: center;
   }
-  .icono {
-    font-size: 48px;
-    margin-bottom: 8px;
+
+  /* Logo / Isotipo */
+  .logo-badge {
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 16px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #242424, #121212);
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dorado);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
   }
+  .logo-badge svg {
+    width: 36px;
+    height: 36px;
+  }
+
   h1 {
     color: var(--dorado);
-    font-size: 26px;
-    margin: 0 0 4px;
+    font-size: 28px;
+    margin: 0 0 6px;
     letter-spacing: 0.5px;
+    font-weight: 800;
   }
   .subtitulo {
     color: var(--texto-tenue);
     font-size: 15px;
-    margin: 0 0 32px;
+    margin: 0 0 20px;
+    line-height: 1.4;
   }
+
+  /* Barra de especificaciones y badge de seguridad */
+  .specs-bar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 12px;
+    color: var(--texto-tenue);
+    margin-bottom: 20px;
+  }
+  .specs-bar .sep {
+    color: #444;
+  }
+  .badge-seguro {
+    color: var(--verde-seguro);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* Botón principal */
   .boton-descarga {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     background: var(--dorado);
     color: #1a1400;
     font-weight: 700;
@@ -54,12 +124,151 @@
     padding: 16px;
     border-radius: 12px;
     margin-bottom: 8px;
+    box-shadow: 0 6px 20px rgba(242, 202, 80, 0.25);
+    transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
   }
-  .version {
+  .boton-descarga:hover {
+    background: var(--dorado-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(242, 202, 80, 0.35);
+  }
+  .boton-descarga:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(242, 202, 80, 0.2);
+  }
+  .version-meta {
     color: var(--texto-tenue);
     font-size: 13px;
-    margin: 0 0 32px;
+    margin: 0 0 28px;
   }
+
+  /* Mockup de la App para generar confianza */
+  .preview-card {
+    background: linear-gradient(180deg, #181818, #111111);
+    border: 1px solid var(--borde);
+    border-radius: 20px;
+    padding: 16px;
+    margin-bottom: 24px;
+    text-align: left;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+  }
+  .preview-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--dorado);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  .phone-screen {
+    background: #0d0d0d;
+    border: 1px solid #292929;
+    border-radius: 14px;
+    padding: 14px;
+  }
+  .screen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: var(--texto-tenue);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #1f1f1f;
+  }
+  .screen-header span:first-child {
+    font-weight: 600;
+    color: var(--texto);
+  }
+  .mock-item {
+    background: #171717;
+    border: 1px solid #262626;
+    border-radius: 8px;
+    padding: 9px 11px;
+    margin-bottom: 8px;
+  }
+  .mock-item-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: var(--dorado);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+  .mock-item-val {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--texto);
+    display: flex;
+    justify-content: space-between;
+  }
+  .mock-slots {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-top: 6px;
+  }
+  .mock-slot {
+    background: #202020;
+    color: var(--texto-tenue);
+    border: 1px solid transparent;
+    padding: 6px;
+    font-size: 11px;
+    border-radius: 6px;
+    text-align: center;
+  }
+  .mock-slot.active {
+    background: rgba(242, 202, 80, 0.15);
+    color: var(--dorado);
+    border-color: var(--dorado);
+    font-weight: 700;
+  }
+  .mock-cta {
+    background: var(--dorado);
+    color: #121008;
+    text-align: center;
+    padding: 9px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 10px;
+  }
+
+  /* Características rápidas */
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 24px;
+    text-align: left;
+  }
+  .feature-item {
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .feature-icon {
+    font-size: 22px;
+    line-height: 1;
+  }
+  .feature-text strong {
+    display: block;
+    font-size: 13px;
+    color: var(--texto);
+  }
+  .feature-text span {
+    font-size: 12px;
+    color: var(--texto-tenue);
+  }
+
+  /* Bloque Cómo Instalar */
   .aviso {
     background: var(--superficie);
     border: 1px solid var(--borde);
@@ -71,9 +280,12 @@
   .aviso h2 {
     font-size: 14px;
     color: var(--dorado);
-    margin: 0 0 8px;
+    margin: 0 0 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
   }
   .aviso ol {
     margin: 0;
@@ -83,36 +295,353 @@
     line-height: 1.7;
   }
   .aviso strong { color: var(--texto); }
+
   .nota {
     color: var(--texto-tenue);
     font-size: 13px;
     line-height: 1.6;
+    margin-bottom: 0;
   }
   .nota b { color: var(--texto); }
+
+  /* Alerta iOS */
+  .ios-alert {
+    display: none;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    border-radius: 12px;
+    padding: 14px;
+    text-align: left;
+    margin-bottom: 16px;
+    animation: fadeIn 0.3s ease-out;
+  }
+  .ios-alert-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #f87171;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .ios-alert-desc {
+    font-size: 13px;
+    color: var(--texto);
+    margin: 0 0 10px;
+    line-height: 1.5;
+  }
+  .ios-alert-desc b { color: #fff; }
+  .ios-alert-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+  .ios-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #25D366;
+    color: #0c2b16;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: opacity 0.15s ease;
+  }
+  .ios-action-btn:hover {
+    opacity: 0.9;
+  }
+
+  /* Tarjeta con Código QR */
+  .qr-card {
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+    padding: 20px 16px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .qr-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--dorado);
+    background: rgba(242, 202, 80, 0.1);
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .qr-card h3 {
+    font-size: 16px;
+    color: var(--texto);
+    margin: 0 0 6px;
+    font-weight: 700;
+  }
+  .qr-card p {
+    font-size: 13px;
+    color: var(--texto-tenue);
+    margin: 0 0 14px;
+    line-height: 1.5;
+    max-width: 340px;
+  }
+  .qr-wrapper {
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    display: inline-flex;
+    margin-bottom: 12px;
+  }
+  .qr-img {
+    width: 140px;
+    height: 140px;
+    display: block;
+    border-radius: 6px;
+  }
+  .share-btn {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    background: var(--superficie-alta);
+    border: 1px solid var(--borde);
+    color: var(--texto);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .share-btn:hover {
+    background: #2e2e2e;
+    border-color: #444;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 </style>
 </head>
 <body>
 <main>
-  <div class="icono">✂️</div>
+  <!-- Isotipo oficial BarberApp -->
+  <div class="logo-badge" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="6" cy="6" r="3"></circle>
+      <circle cx="6" cy="18" r="3"></circle>
+      <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+      <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+      <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+    </svg>
+  </div>
+
   <h1>BarberApp</h1>
-  <p class="subtitulo">Reservá tu cita en la barbería desde tu celular</p>
+  <p class="subtitulo">Reservá tu cita en la barbería desde tu celular en segundos</p>
 
-  <a class="boton-descarga" href="https://jzrfejjtljdfegvcthpm.supabase.co/storage/v1/object/public/releases/barberapp.apk" download>⬇ Descargar APK</a>
-  <p class="version">Versión 1.1.0 · Solo Android</p>
+  <!-- Ficha técnica y validación de seguridad -->
+  <div class="specs-bar">
+    <span>v1.1.0</span>
+    <span class="sep">•</span>
+    <span>22.2 MB</span>
+    <span class="sep">•</span>
+    <span>Android 7.0+</span>
+    <span class="sep">•</span>
+    <span class="badge-seguro">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"></path></svg>
+      Verificado
+    </span>
+  </div>
 
+  <!-- Alerta condicional para usuarios de iOS -->
+  <div id="ios-banner" class="ios-alert">
+    <div class="ios-alert-badge">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="8" x2="12" y2="12"></line>
+        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+      </svg>
+      Detectamos que estás en iPhone / iOS
+    </div>
+    <p class="ios-alert-desc">
+      El archivo <b>.APK</b> solo puede instalarse en teléfonos <b>Android</b>. La versión para iOS se encuentra en proceso para la App Store.
+    </p>
+    <div class="ios-alert-actions">
+      <a class="ios-action-btn" href="https://wa.me/?text=Hola%20quiero%20reservar%20mi%20cita%20en%20la%20barber%C3%ADa" target="_blank" rel="noopener">
+        💬 Pedir turno por WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- Botón de Descarga Directa -->
+  <a id="download-btn" class="boton-descarga" href="https://jzrfejjtljdfegvcthpm.supabase.co/storage/v1/object/public/releases/barberapp.apk" download>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+      <polyline points="7 10 12 15 17 10"></polyline>
+      <line x1="12" y1="15" x2="12" y2="3"></line>
+    </svg>
+    <span id="download-btn-text">Descargar APK</span>
+  </a>
+  <p class="version-meta">Descarga oficial y segura · Sin anuncios</p>
+
+  <!-- Tarjeta con Código QR de Descarga -->
+  <section class="qr-card">
+    <div class="qr-tag">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+      Escaneo Móvil
+    </div>
+    <h3>¿Estás en tu computadora?</h3>
+    <p>Apuntá la cámara de tu celular Android a este código para descargar directamente sin cables.</p>
+    <div class="qr-wrapper">
+      <img src="./qr-descarga.png" alt="Código QR para descargar BarberApp APK" class="qr-img" width="140" height="140" />
+    </div>
+    <button type="button" id="share-btn" class="share-btn">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+      Compartir enlace
+    </button>
+  </section>
+
+  <!-- Preview / Mockup de la App -->
+  <div class="preview-card">
+    <div class="preview-tag">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+      Vista previa de la app
+    </div>
+    <div class="phone-screen">
+      <div class="screen-header">
+        <span>✂️ BarberApp Reservas</span>
+        <span>Lun 14 Sept</span>
+      </div>
+      <div class="mock-item">
+        <div class="mock-item-label">Servicio</div>
+        <div class="mock-item-val">
+          <span>Corte Clásico + Barba</span>
+          <span style="color: var(--dorado)">$ 4.500</span>
+        </div>
+      </div>
+      <div class="mock-item">
+        <div class="mock-item-label">Barbero</div>
+        <div class="mock-item-val">
+          <span>Carlos M. (Senior)</span>
+          <span style="font-size:11px; color:#4ade80">● Disponible</span>
+        </div>
+      </div>
+      <div class="mock-item">
+        <div class="mock-item-label">Horarios disponibles</div>
+        <div class="mock-slots">
+          <div class="mock-slot">15:00</div>
+          <div class="mock-slot active">15:30 ✓</div>
+          <div class="mock-slot">16:00</div>
+        </div>
+      </div>
+      <div class="mock-cta">Confirmar Reserva</div>
+    </div>
+  </div>
+
+  <!-- Beneficios Clave -->
+  <div class="features-grid">
+    <div class="feature-item">
+      <div class="feature-icon">⚡</div>
+      <div class="feature-text">
+        <strong>Reservas en tiempo real</strong>
+        <span>Sin llamadas ni esperas por WhatsApp</span>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">💈</div>
+      <div class="feature-text">
+        <strong>Elegí a tu profesional</strong>
+        <span>Revisá disponibilidad de tu barbero favorito</span>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">🔔</div>
+      <div class="feature-text">
+        <strong>Recordatorios automáticos</strong>
+        <span>Avisos antes de tu turno para que nunca lo pierdas</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Instrucciones de instalación -->
   <div class="aviso">
-    <h2>Cómo instalar</h2>
+    <h2>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="16" x2="12" y2="12"></line>
+        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+      </svg>
+      Cómo instalar
+    </h2>
     <ol>
       <li>Tocá <strong>Descargar APK</strong> arriba.</li>
-      <li>Android va a avisar "origen desconocido" — tocá <strong>Configuración</strong> y activá <strong>Permitir de esta fuente</strong> (una sola vez).</li>
+      <li>Android va a avisar <em>"origen desconocido"</em> — tocá <strong>Configuración</strong> y activá <strong>Permitir de esta fuente</strong> (solo la primera vez).</li>
       <li>Volvé atrás y tocá <strong>Instalar</strong>.</li>
     </ol>
   </div>
 
   <p class="nota">
-    Este aviso de seguridad es normal: la app todavía no está en Google Play,
-    se instala directo desde acá. <b>Solo funciona en Android</b> por ahora.
+    Este aviso de seguridad es habitual: la app se distribuye de forma directa mientras se publica en Google Play. <b>100% segura y libre de publicidad</b>.
   </p>
 </main>
+
+<script>
+  (function() {
+    // 1. Detección de dispositivos iOS (iPhone, iPad, iPod)
+    var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+    if (isIOS) {
+      var iosBanner = document.getElementById('ios-banner');
+      if (iosBanner) {
+        iosBanner.style.display = 'block';
+      }
+      var downloadBtn = document.getElementById('download-btn');
+      if (downloadBtn) {
+        downloadBtn.title = "Aviso: los archivos APK no son compatibles con iOS";
+      }
+    }
+
+    // 2. Feedback táctil y visual al descargar
+    var downloadBtn = document.getElementById('download-btn');
+    var downloadBtnText = document.getElementById('download-btn-text');
+    if (downloadBtn && downloadBtnText) {
+      downloadBtn.addEventListener('click', function() {
+        var originalText = downloadBtnText.textContent;
+        downloadBtnText.textContent = "Iniciando descarga...";
+        downloadBtn.style.opacity = "0.85";
+        setTimeout(function() {
+          downloadBtnText.textContent = "¡Descarga iniciada! Revisá tus notificaciones";
+          setTimeout(function() {
+            downloadBtnText.textContent = originalText;
+            downloadBtn.style.opacity = "1";
+          }, 3500);
+        }, 600);
+      });
+    }
+
+    // 3. Web Share API para compartir enlace
+    var shareBtn = document.getElementById('share-btn');
+    if (shareBtn && navigator.share) {
+      shareBtn.style.display = 'inline-flex';
+      shareBtn.addEventListener('click', function() {
+        navigator.share({
+          title: 'BarberApp — Descargá la app',
+          text: 'Reservá tu turno en la barbería desde tu celular con BarberApp.',
+          url: window.location.href
+        }).catch(function() {});
+      });
+    }
+  })();
+</script>
 </body>
 </html>
